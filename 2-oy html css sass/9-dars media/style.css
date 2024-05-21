@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: 0px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border: 1px solid red;
+    max-width: 1400px;
+    width: 100%;
+}
+.center{
+    display: flex;
+    justify-content: center;
+}
+header nav{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+header nav li{
+    list-style: none;
+}
+
+.menu{
+    display: none;
+    font-size: 30px;
+}
+
+.banner{
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+
+@media (max-width:800px){
+    .menu{
+        display: block;
+    }
+    header nav{
+        display: none;
+    }
+}

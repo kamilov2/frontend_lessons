@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: 0px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border: 1px solid red;
+    max-width: 1400px;
+    width: 100%;
+}
+.center{
+    display: flex;
+    justify-content: center;
+}
+header nav{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+header nav li{
+    list-style: none;
+}
+
+.joylashuv{
+    width: 100%;
+    max-width: 1400px;
+    margin-top: 50px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.xarita{
+    width: 50%;
+}
+.rasm{
+    width: 50%;
+}
+
+.map{
+    width: 100%;
+    height: 500px;
+}

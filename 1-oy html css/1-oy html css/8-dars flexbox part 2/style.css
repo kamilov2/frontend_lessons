@@ -1,0 +1,30 @@
+*{
+    margin: 0px;
+}
+
+.container{
+    display: flex;
+    height: 100vh;
+    gap: 20px;
+    justify-content: space-between;
+}
+.box1{
+    width: 100px;
+    height: 50px;
+    background-color: orange;
+    order: 3;
+
+}
+.box2{
+    width: 100px;
+    height: 50px;
+    order: 1;
+    align-self: center;
+    background-color: rgb(63, 34, 232);
+}
+.box3{
+    width: 100px;
+    height: 50px;
+    order: 2;
+    background-color: rgb(246, 22, 22);
+}

@@ -1,0 +1,14 @@
+.box{
+    background-color: orange;
+    width: 630px;
+    height: 356px;
+    margin: auto;
+    margin-top: 200px;
+    outline: 25px groove gold;
+    box-sizing: border-box;
+}
+
+.box video{
+    width: 630px;
+    height: 356px;
+}
