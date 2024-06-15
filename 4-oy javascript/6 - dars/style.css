@@ -1,0 +1,15 @@
+.white{
+    background-color: rgb(21, 255, 0);
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    border-radius: 5px;
+
+}
+.dark{
+    background-color: black;
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    border-radius: 5px;
+}
