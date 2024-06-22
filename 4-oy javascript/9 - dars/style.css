@@ -1,0 +1,10 @@
+.myClass{
+    background-color: black;
+    
+    margin: auto;
+    border-radius: 5px;
+}
+.myClass2{
+    width: 100px;
+    height: 100px;
+}
