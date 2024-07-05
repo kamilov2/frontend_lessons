@@ -21,11 +21,9 @@ for (let a in person) {
 
 
 const numbers = [1,2,3,4,5];
-let s = 0
 const element = document.getElementById('myid')
 for (let a in numbers) {
-    element.innerHTML += `<h1>${numbers[a]}</h1>`
-    console.log(s + numbers[a])
+    element.innerHTML += `<h1>${numbers[a]}</h1>`   
 }
 
 
