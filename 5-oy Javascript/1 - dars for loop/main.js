@@ -7,27 +7,79 @@
 // }
 
 
-const person = {
-    name: 'John',
-    age: 30,
-    city: 'New York',
-    phone_number: 902059000
-};
-console.log(person['name'])
+const person = [
+    {
+        name: 'John',
+        age: 30,
+        city: 'New York',
+        phone_number: 902059000
+    },
+    {
+        name: 'javlon',
+        age: 30,
+        city: 'New York',
+        phone_number: 905251243
+    },
+    {
+        name: 'javlon',
+        age: 30,
+        city: 'New York',
+        phone_number: 905251243
+    },
+    {
+        name: 'John',
+        age: 30,
+        city: 'New York',
+        phone_number: 902059000
+    },
+    {
+        name: 'javlon',
+        age: 30,
+        city: 'New York',
+        phone_number: 905251243
+    },
+    {
+        name: 'javlon',
+        age: 30,
+        city: 'New York',
+        phone_number: 905251243
+    },
+];
 
-for (let a in person) {    
-    console.log(`${a}: ${person[a]}`);
+const table = document.getElementById('myTable')
+
+for (let index = 0; index < person.length; index++) {
+    let row = document.createElement("tr");
+    row.innerHTML = `
+        <td>${person[index].name}</td>
+        <td>${person[index].age}</td>
+        <td>${person[index].city}</td>
+        <td>${person[index].phone_number}</td>
+    `;
+    table.appendChild(row);
 }
 
+// console.log(person['name'])
 
-const numbers = [1,2,3,4,5];
-const element = document.getElementById('myid')
-for (let a in numbers) {
-    element.innerHTML += `<h1>${numbers[a]}</h1>`   
-}
+// for (let a in person) {
+//     console.log(`${a}: ${person[a]}`);
+// }
 
 
-// const word = "hello world"
-// for (let a in word) {
-//     console.log(word[a])
+
+
+// let num = 10;
+// while (num) {
+//     console.log(num);
+//     num--;
+// }
+
+// let num = 0;
+
+// while (true) {
+//     if (num === 90) {
+//         break;
+//     };
+//     console.log(num);
+//     num++;
 // }
